@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid fixed>
+ <ion-row>
+  <div class="profile flex">
+    <div class="avatar">
+      <img src="assets/imgs/{{account.avatar}}.png" />
+    </div>
+    <div class="separator">
+      <h6>Joined</h6>
+      <h4>Today</h4>
+    </div>
+  </div>
+  <div class="ion-justify-content-center header-text">{{account.name}}</div>
+  <div class="profile-items">
+  <ion-item lines="none" detail>
+    <h5>Edit Profile</h5>
+  </ion-item>
+  <ion-item lines="none" detail>
+    <h5>Privacy Policy</h5>
+  </ion-item>
+  <ion-item lines="none" class="bottom-bar" detail>
+    <h5>Settings</h5>
+  </ion-item>
+
+  <div class="upgrade">
+    <ion-item lines="none" detail>
+      <div class="ion-text-left">
+        <div class="pro">PRO</div>
+        <h5>Upgrade to Premium</h5>
+        <h4>This subscription is auto-renewable</h4>
+      </div>
+    </ion-item>
+  </div>
+  <ion-item lines="none" (click)="logout()" class="bottom-bar" detail>
+    <h6>Sign Out</h6>
+  </ion-item>
+</div>
+ </ion-row>
+  </ion-grid>
+</ion-content>

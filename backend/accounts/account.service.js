@@ -18,7 +18,7 @@ module.exports = {
 async function authenticate({ email, password, ipAddress }) {
     const account = await db.Account.findOne({ email });
 
-    if (!account || !account.isVerified || !bcrypt.compareSync(password, account.passwordHash)) {
+    if (!account || !bcrypt.compareSync(password, account.passwordHash)) {
         throw 'Email or password is incorrect';
     }
 
@@ -136,6 +136,10 @@ function generateRefreshToken(account, ipAddress) {
         expires: new Date(Date.now() + 7*24*60*60*1000),
         createdByIp: ipAddress
     });
+}
+
+function randomTokenString() {
+    return crypto.randomBytes(40).toString('hex');
 }
 
 function randomString() {

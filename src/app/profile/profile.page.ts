@@ -4,31 +4,25 @@ import { AccountService } from '../_services';
 import { Account, Role } from '../_models';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
 })
-export class HomePage implements OnInit {
-  categories:any = 'beginner';
+export class ProfilePage implements OnInit {
   Role = Role;
   account!: Account;
 
   constructor(
     private router: Router,
     private accountService: AccountService
-    ) {}
+    ) { }
 
   ngOnInit() {
     this.accountService.account.subscribe(x => this.account = x);
-    
-  }
-  onWorkoutPlan() {
-    this.router.navigate(['workout-plan']);
   }
 
-  segmentChanged(ev: Event) {
-    const customEvent = ev as CustomEvent;
-    this.categories = customEvent.detail.value;
-  }
+  logout(): void {
+    this.accountService.logout();
+}
 
 }

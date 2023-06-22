@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
+import { AuthGuard } from './_helpers';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./onboarding/onboarding.module').then( m => m.OnboardingPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule), canActivate: [AuthGuard]
   },
   {
-    path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), canActivate: [AuthGuard]
   },
   {
     path: 'onboarding',
@@ -23,9 +24,23 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  }
+    path: 'notification',
+    loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule), canActivate: [AuthGuard]
+  },
+  {
+    path: 'trainers',
+    loadChildren: () => import('./trainers/trainers.module').then( m => m.TrainersPageModule)
+  },
+  { path: '**', redirectTo: 'profile' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'workout-plan',
+    loadChildren: () => import('./workout-plan/workout-plan.module').then( m => m.WorkoutPlanPageModule)
+  },
 ];
 @NgModule({
   imports: [
