@@ -1,13 +1,118 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>notification</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid fixed>
+ <ion-row>
+  <div class="ion-justify-content-center header-text">Notifications</div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notification</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="notifications">
+    <div class="segments ion-justify-content-center">
+      <ion-segment [value]="categories" (ionChange)="segmentChanged($event)" mode="ios">
+        <ion-segment-button value="new">
+          <ion-label>New</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="events">
+          <ion-label>Events</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="all">
+          <ion-label>All</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </div>
+    <div class="messages" *ngIf="categories=='new'">
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Congratulations</h4>
+          <h5>35% your daily challenge completed</h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:45 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Congratulations</h4>
+          <h5>35% your daily challenge completed</h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:45 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Congratulations</h4>
+          <h5>35% your daily challenge completed</h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:45 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Congratulations</h4>
+          <h5>35% your daily challenge completed</h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:45 AM</h6>
+      </ion-item>
+    </div>
+    <div class="messages" *ngIf="categories=='events'">
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Attention</h4>
+          <h5>Your subscription is going to expire
+            very soon. Subscribe now.</h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:38 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Attention</h4>
+          <h5>Your subscription is going to expire
+            very soon. Subscribe now.</h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:38 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Attention</h4>
+          <h5>Your subscription is going to expire
+            very soon. Subscribe now.</h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:38 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Attention</h4>
+          <h5>Your subscription is going to expire
+            very soon. Subscribe now.</h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:38 AM</h6>
+      </ion-item>
+    </div>
+    <div class="messages" *ngIf="categories=='all'">
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Daily Activity</h4>
+          <h5>Time for your workout session </h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:45 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Daily Activity</h4>
+          <h5>Time for your workout session </h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:45 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Daily Activity</h4>
+          <h5>Time for your workout session </h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:45 AM</h6>
+      </ion-item>
+      <ion-item lines="none">
+        <div class="ion-text-left">
+          <h4>Daily Activity</h4>
+          <h5>Time for your workout session </h5>
+        </div>
+        <h6 class="ion-text-right" slot="end">9:45 AM</h6>
+      </ion-item>
+    </div>
+
+ </ion-row>
+  </ion-grid>
 </ion-content>

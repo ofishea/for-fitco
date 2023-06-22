@@ -65,7 +65,7 @@ export class LoginPage implements OnInit {
           .pipe(first())
           .subscribe({
               next: () => {
-                    this.router.navigate(['home'], { relativeTo: this.route });
+                    this.router.navigate([''], { relativeTo: this.route });
                     this.loading = false;
               },
               error: error => {

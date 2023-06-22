@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notification.page.scss'],
 })
 export class NotificationPage implements OnInit {
+  categories:any = 'new';
 
   constructor() { }
 
   ngOnInit() {
+  }
+  segmentChanged(ev: Event) {
+    const customEvent = ev as CustomEvent;
+    this.categories = customEvent.detail.value;
   }
 
 }
