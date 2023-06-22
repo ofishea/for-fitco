@@ -1,3 +1,14 @@
-<p>
-  onboard3 works!
-</p>
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <div class="main-container" [style.background-image]="'url(assets/imgs/welcomebg3.png)'">
+    <div class="welcome-page__background center-text">
+      <div class="welcome-page__text-con">
+        <div class="title">
+          ACTION IS THE,<br> <b>KEY TO ALL SUCCESS</b>
+        </div>
+      </div>
+      <ion-button shape="round" class="app-btn" expand="block" (click)="onResgister()">
+        <span>Start Now </span><img src="assets/icon/chevron-right.svg" />
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

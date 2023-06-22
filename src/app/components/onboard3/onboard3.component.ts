@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-onboard3',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Onboard3Component  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+    ) { }
 
   ngOnInit() {}
 
+  onResgister() {
+    this.router.navigate(['register']);
+  }
 }
