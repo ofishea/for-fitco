@@ -1,0 +1,29 @@
+.newwo {
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 10px 10px 0;
+  
+    .half-card {
+      width: 180px;
+      height: 205px;
+      position: relative;
+      opacity: 1;
+      .title {
+          transform: translate(5%, 750%);
+          --font-family: 'Open Sans';
+          --font-style: normal;
+          font-weight: 600;
+          font-size: 17px;
+          color: #FFFFFF;
+      }
+      .subtitle {
+          transform: translate(5%, 950%);
+          --font-family: 'Open Sans';
+          --font-style: normal;
+          font-size: 13px;
+          color: #D0FD3E;
+      }
+    }
+}

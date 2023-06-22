@@ -11,19 +11,26 @@
   <div class="login-page">
     <div class="form">
 
-    <form action="">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="flex al-center">
-          <ion-input placeholder="Email" type="email"></ion-input> 
+          <ion-input placeholder="Email" type="email" formControlName="email"></ion-input> 
         </div>
         <div class="flex al-center">
-          <ion-input placeholder="Password" type="password"></ion-input>
+          <div class="pinput">
+            <ion-input placeholder="Password" [type]="ptype" formControlName="password"></ion-input>
+            <div class="icon-wrapper">
+              <ion-icon name="eye-off-outline" *ngIf="ptype=='text'" (click)="switchType()"></ion-icon>
+              <ion-icon name="eye-outline" *ngIf="ptype=='password'" (click)="switchType()"></ion-icon>
+            </div>
+          </div>
         </div>
         <div class="forgot">Forgot Password</div>
         <div class="form-bottom">
           <ion-icon name="logo-apple"></ion-icon>
           <ion-icon name="logo-google"></ion-icon>
-      <ion-button shape="round" class="app-btn mt-small" expand="block">
+      <ion-button [disabled]="loading" type="submit" shape="round" class="app-btn mt-small" expand="block">
         <span>Login</span><img src="assets/icon/chevron-right.svg" />
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       </ion-button>
     </div>
     </form>

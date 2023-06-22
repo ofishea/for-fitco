@@ -1,0 +1,28 @@
+.woplan {
+    display: inline-block;
+    border-radius: 18px;
+    overflow: hidden;
+    margin: 0 10px 10px 0;
+    .card {
+        position: relative;
+        margin-top: 15px;
+        border-radius: 16px;
+        width: 255px;
+        height: 120px;
+        .title {
+            transform: translate(5%, 350%);
+            --font-family: 'Open Sans';
+            --font-style: normal;
+            font-weight: 600;
+            font-size: 17px;
+            color: #FFFFFF;
+        }
+        .subtitle {
+            transform: translate(5%, 450%);
+            --font-family: 'Open Sans';
+            --font-style: normal;
+            font-size: 13px;
+            color: #D0FD3E;
+        }
+    }
+}

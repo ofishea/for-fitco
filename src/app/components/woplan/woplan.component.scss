@@ -1,0 +1,36 @@
+.workout-plan {
+
+    h4 {
+        --font-family: 'Open Sans';
+        --font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    h6 {
+        --font-family: 'Open Sans';
+        --font-style: normal;
+        color: #D0FD3E;
+        font-size: 10px;
+    }
+    .card {
+        position: relative;
+        border-radius: 16px;
+        width: 275px;
+        height: 120px;
+        .title {
+            transform: translate(5%, 350%);
+            --font-family: 'Open Sans';
+            --font-style: normal;
+            font-weight: 600;
+            font-size: 17px;
+            color: #FFFFFF;
+        }
+        .subtitle {
+            transform: translate(5%, 450%);
+            --font-family: 'Open Sans';
+            --font-style: normal;
+            font-size: 13px;
+            color: #D0FD3E;
+        }
+    }
+}

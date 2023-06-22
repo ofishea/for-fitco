@@ -7,6 +7,7 @@ export class Account {
     plan?: string;
     language?: string;
     role?: Role;
+    token?: string;
     notification?: Boolean;
     jwtToken?: string;
 }

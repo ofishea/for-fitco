@@ -1,0 +1,17 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="main-app-toolbar">
+    <div class="flex jc-between">
+      <div>
+        <img src="{{ src1 }}"/>
+      </div>
+      <div>
+        <ion-title *ngIf="hasTitle">{{ title }}</ion-title>
+      </div>
+      <div>
+        <img
+          src="{{ src2 }}"
+        />
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>

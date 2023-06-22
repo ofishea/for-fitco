@@ -37,6 +37,18 @@
   .mt-small {
     margin-top: 15px;
   }
+  
+  .jc-between {
+    justify-content: space-between;
+  }
+  
+  .mt-esmall {
+    margin-top: 5px;
+  }
+  
+  .mb-esmall {
+    margin-bottom: 5px;
+  }
 
 
 .app-btn {
@@ -59,7 +71,62 @@
     border-bottom: 2px solid #232121;
     font-size: 14px !important;
   }
+  ion-tab-bar {
+    --background: #232121;
+    --color: #000000;
+    --opacity: 1;
+    ion-tab-button {
+      --background-focused: #000000;
+      --color-selected: #ffffff;
+    }
+  }
 
   ion-content {
     --background: #121212;
+  }
+  
+  ion-header {
+    box-shadow: none;
+  }
+  
+  // flex-column layout
+  @mixin column-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  // flex-row layout
+  @mixin flex-no-justify {
+    display: flex;
+    align-items: center;
+  }
+  
+  $padding-page: 11px;
+  
+
+.segments {
+    margin-top: 5px;
+    ion-segment {
+        align-items: center;
+        ion-segment-button {
+            --indicator-color: #D0FD3E;
+          }
+          
+          /* Material Design styles */
+          ion-segment-button.md {
+            --color: #ffffff;
+            --color-checked: #000000;
+            --indicator-height: 4px;
+            --border-radius: 10px;
+          }
+          
+          /* iOS styles */
+          ion-segment-button.ios {
+            --color: #ffffff;
+            --color-checked: #000000;
+            --border-radius: 10px;
+          }
+    }
   }

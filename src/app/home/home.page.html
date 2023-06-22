@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid fixed>
+ <ion-row>
+  <div class="header-text">HELLO JOSE,
+    <h5>Good Morning.</h5>
+  </div>
+
+  <app-woplan (click)="onWorkoutPlan()" header="Today Workout Plan" subheader="Tue 20 Jun" title="Day 01 - Warm Up" subtitle="| 07:00 - 08:00 AM" bgimg="url(assets/imgs/card1-img.png)"></app-woplan>
+  <div class="workout-cartegories">
+    <div class="flex jc-between mb-esmall mt-esmall">
+      <h4>Workout Categories</h4>
+      <h6>See All</h6>
+    </div>
+    <div class="segments">
+      <ion-segment [value]="categories" (ionChange)="segmentChanged($event)" mode="ios" class="ion-justify-content-center">
+        <ion-segment-button value="beginner">
+          <ion-label>Beginner</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="intermediate">
+          <ion-label>Intermediate</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="advance">
+          <ion-label>Advance</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </div>
+    <div class="straight-flex" *ngIf="categories=='beginner'">
+      <app-wocategories title="Learn the Basic of Training" subtitle="| 06 Workouts for Beginner" bgimg="url(assets/imgs/man-wo.png)"></app-wocategories>
+      <app-wocategories title="Learn the Basic of Training" subtitle="| 06 Workouts for Beginner" bgimg="url(assets/imgs/man-wo.png)"></app-wocategories>
+    </div>
+    <div class="straight-flex" *ngIf="categories=='intermediate'">
+      <app-wocategories title="The Intermediate Training" subtitle="| 06 Workouts for Intermediate" bgimg="url(assets/imgs/man-wo.png)"></app-wocategories>
+      <app-wocategories title="The Intermediate Training" subtitle="| 06 Workouts for Intermediate" bgimg="url(assets/imgs/man-wo.png)"></app-wocategories>
+    </div>
+    <div class="straight-flex" *ngIf="categories=='advance'">
+      <app-wocategories title="Learn the Advanced Training" subtitle="| 06 Workouts for Advanced" bgimg="url(assets/imgs/man-wo.png)"></app-wocategories>
+      <app-wocategories title="Learn the Advanced Training" subtitle="| 06 Workouts for Advanced" bgimg="url(assets/imgs/man-wo.png)"></app-wocategories>
+    </div>
+
+
+  <div class="new-workout">
+    <div class="flex jc-between mb-esmall mt-esmall">
+      <h4>New Workout</h4>
+    </div>
+  </div>
+  <div class="straight-flex">
+    <app-newwo title="Warm up" subtitle="| 01 Workout" bgimg="url(assets/imgs/warmup1.png)"></app-newwo>
+    <app-newwo title="Warm up" subtitle="| 01 Workout" bgimg="url(assets/imgs/warmup2.png)"></app-newwo>
+  </div>
+ </ion-row>
+  </ion-grid>
+</ion-content>

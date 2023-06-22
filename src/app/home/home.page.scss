@@ -1,0 +1,55 @@
+
+.header-text  {
+    color: #FFFFFF;
+    --font-family: 'Integral CF';
+    --font-style: bold;
+    font-weight: bolder;
+    margin-top: 50px;
+    font-size: 28px;
+    line-height: 7px;
+    
+    h5 {
+        --font-family: 'Open Sans';
+        --font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        color: #FFFFFF;
+    }
+    }
+    
+    .workout-cartegories {
+        h4 {
+            --font-family: 'Open Sans';
+            --font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        h6 {
+            --font-family: 'Open Sans';
+            --font-style: normal;
+            margin-top: 20px;
+            color: #D0FD3E;
+            font-size: 10px;
+        }
+    }
+    
+    .new-workout {
+        h4 {
+            --font-family: 'Open Sans';
+            --font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        h6 {
+            --font-family: 'Open Sans';
+            --font-style: normal;
+            color: #D0FD3E;
+            font-size: 10px;
+        }
+    }
+    
+    .straight-flex {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+      }
