@@ -1,13 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>workout-plan</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <div class="main-container" [style.background-image]="'url(assets/imgs/workout-planbg.png)'">
+    <div class="flex jc-between mb-esmall mt-esmall"> 
+    <span (click)="onBack()"><img src="assets/icon/Circle-Left.svg" /> </span>
+    <ion-button shape="round" class="app-btn">
+      <span>Start</span>
+    </ion-button>
+    </div>
+  </div>
+  <div class="woplan-page">
+    <div class="header">
+      <div class="title">Day 01 - Warm Up</div>
+      <div class="subtitle">04 Workouts for Beginner</div>
+      <div class="info flex">
+        <div class="play flex"><img src="assets/icon/Play.svg" /> <span>60 min</span></div>
+        <div class="flame flex"><img src="assets/icon/Flame.svg" /> <span>350 Cal</span></div>
+      </div>
+    </div>
+    <ion-text>Want your body to be healthy. Join our program with directions according to body’s goals. 
+      Increasing physical strength is the goal of strenght training. 
+      Maintain body fitness by doing physical exercise at least 2-3 times a week. </ion-text>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">workout-plan</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <ion-item lines="none" detail>
+        <div class="thumb flex">
+          <img src="assets/imgs/item-thumb1.png" />
+        </div>
+        <h5>Simple Warm-Up Exercises</h5>
+        <h6>0:30</h6>
+      </ion-item>
+      <ion-item lines="none" detail>
+        <div class="thumb flex">
+          <img src="assets/imgs/item-thumb2.png" />
+        </div>
+        <h5>Stability Training Basics</h5>
+        <h6>0:30</h6>
+      </ion-item>
+      <ion-item lines="none" detail>
+        <div class="thumb flex">
+          <img src="assets/imgs/item-thumb2.png" />
+        </div>
+        <h5>Treadmill Run Starter</h5>
+        <h6>4:30</h6>
+      </ion-item>
+      <ion-item lines="none" detail>
+        <div class="thumb flex">
+          <img src="assets/imgs/item-thumb2.png" />
+        </div>
+        <h5>Treadmill Run Starter</h5>
+        <h6>4:30</h6>
+      </ion-item>
+  </div>
 </ion-content>

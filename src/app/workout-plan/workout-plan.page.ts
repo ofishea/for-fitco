@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-workout-plan',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkoutPlanPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private NavCtrl: NavController,
+    private modalController: ModalController
+    ) { }
 
   ngOnInit() {
+  }
+  onBack() {
+    this.NavCtrl.back();
   }
 
 }

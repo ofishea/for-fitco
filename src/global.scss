@@ -64,6 +64,17 @@
     --box-shadow: none;
     z-index: 10;
   } 
+  ion-text {
+    display: block;
+  }
+  ion-title {
+    color: #ffffff;
+    font-size: 12px;
+  }
+  
+  ion-item {
+    background-color: #121212;
+  }
   ion-input {
     border: none;
     background-color: transparent;
