@@ -26,6 +26,18 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 
+.flex {
+    display: flex;
+  }
+  
+  .al-center {
+    align-items: center;
+  }
+  
+  .mt-small {
+    margin-top: 15px;
+  }
+
 
 .app-btn {
     width: 130px;

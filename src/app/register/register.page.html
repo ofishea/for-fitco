@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <div class="main-container" [style.background-image]="'url(assets/imgs/registerbg.png)'">
+    <div class="top-btn flex">
+      <ion-text (click)="onLogin()"><b>Login</b></ion-text>
+      <ion-text class="active"><b>Sign up</b></ion-text>
+    </div>
+    <div class="title">
+      Hello <b>rookies</b>
+    </div>
+    <div class="subtitle">
+      Enter your informations below <br>to create an account
+    </div>
+  </div>
+  <div class="reg-page">
+    <div class="form">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="flex al-center">
+          <ion-input placeholder="Email" type="email" formControlName="email"></ion-input>
+        </div>
+        <div class="flex al-center">
+          <ion-input placeholder="Password" type="password" formControlName="password"></ion-input>
+        </div>
+        <div class="flex al-center">
+          <ion-input placeholder="Confirm Password" type="password" formControlName="confirmPassword"></ion-input>
+        </div>
+        <div class="form-bottom">
+          <ion-icon name="logo-apple"></ion-icon>
+          <ion-icon name="logo-google"></ion-icon>
+      <ion-button [disabled]="loading" type="submit" shape="round" class="app-btn mt-small" expand="block">
+        <span>Sign up</span><img src="assets/icon/chevron-right.svg" />
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      </ion-button>
+    </div>
+    </form>
+    </div>
+  </div>
+</ion-content>
