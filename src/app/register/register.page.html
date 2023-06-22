@@ -15,6 +15,9 @@
     <div class="form">
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="flex al-center">
+        <ion-input placeholder="Full Name" type="text" formControlName="name"></ion-input>
+      </div>
         <div class="flex al-center">
           <ion-input placeholder="Email" type="email" formControlName="email"></ion-input>
         </div>

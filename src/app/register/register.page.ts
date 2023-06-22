@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AccountService } from '../_services';
+import { AccountService, AlertService } from '../_services';
 import { MustMatch } from '../_helpers';
 
 @Component({
@@ -22,7 +22,8 @@ export class RegisterPage implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private navCtrl: NavController,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private alertService: AlertService
     ) { }
 
   ngOnInit() {
@@ -46,6 +47,9 @@ export class RegisterPage implements OnInit {
   onSubmit() {
       this.submitted = true;
 
+      // reset alerts on submit
+      this.alertService.clear();
+
       // stop here if form is invalid
       if (this.form.invalid) {
           return;
@@ -56,10 +60,12 @@ export class RegisterPage implements OnInit {
           .pipe(first())
           .subscribe({
               next: () => {
+                this.alertService.success('Your registration was successful, you can login now', { keepAfterRouteChange: true });
                   this.router.navigate(['../login'], { relativeTo: this.route });
                   this.loading = false;
               },
               error: error => {
+                  this.alertService.error(error);
                   this.loading = false;
               }
           });
