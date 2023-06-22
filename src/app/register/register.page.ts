@@ -17,6 +17,7 @@ export class RegisterPage implements OnInit {
   form!: FormGroup;
   loading = false;
   submitted = false;
+  ptype:any= 'password';
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -39,6 +40,18 @@ export class RegisterPage implements OnInit {
     }, {
         validator: MustMatch('password', 'confirmPassword')
     });
+  }
+  switchType()
+  {
+    if(this.ptype == 'password')
+    {
+      this.ptype = 'text';
+    }
+
+    else
+    {
+      this.ptype = 'password'
+    }
   }
 
   // convenience getter for easy access to form fields

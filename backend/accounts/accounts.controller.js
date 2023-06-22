@@ -3,6 +3,7 @@ const router = express.Router();
 const Joi = require('joi');
 const validateRequest = require('_middleware/validate-request');
 const authorize = require('_middleware/authorize')
+const Role = require('_helpers/role');
 const accountService = require('./account.service');
 
 // routes
@@ -59,8 +60,8 @@ function revokeToken(req, res, next) {
 
     if (!token) return res.status(400).json({ message: 'Token is required' });
 
-    // users can revoke their own tokens
-    if (!req.user.ownsToken(token)) {
+    // users can revoke their own tokens and admins can revoke any tokens
+    if (!req.user.ownsToken(token) && req.user.role !== Role.Admin) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
 
@@ -72,7 +73,7 @@ function revokeToken(req, res, next) {
 function registerSchema(req, res, next) {
     const schema = Joi.object({
         name: Joi.string().required(),
-        avatar: Joi.number().required(),
+        avatar: Joi.string().required(),
         plan: Joi.string().min(3).required(),
         language: Joi.string().required(),
         email: Joi.string().email().required(),
@@ -103,8 +104,8 @@ function validateResetToken(req, res, next) {
 }
 
 function getById(req, res, next) {
-    // users can get their own account
-    if (req.params.id !== req.user.id) {
+    // users can get their own account and admins can get any account
+    if (req.params.id !== req.user.id && req.user.role !== Role.Admin) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
 

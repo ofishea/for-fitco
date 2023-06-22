@@ -70,3 +70,21 @@
     text-align: left;
     color: #FFFFFF;
   }
+  .pinput {
+   position: relative;
+   width: 100%;
+  
+   .icon-wrapper {
+     position: absolute;
+     right: 0px;
+     top: 55%;
+     z-index: 99999;
+     transform: translateY(-50%);
+   }
+   
+   ion-icon {
+     font-size: 15px;
+     color: #ffffff;
+     padding: 0px 10px;
+   }
+  }

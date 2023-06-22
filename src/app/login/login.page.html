@@ -1,13 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <div class="main-container" [style.background-image]="'url(assets/imgs/loginbg.png)'">
+    <div class="top-btn flex">
+      <ion-text class="active"><b>Login</b></ion-text>
+      <ion-text (click)="onRegister()"><b>Sign up</b></ion-text>
+    </div>
+    <div class="title">
+      Welcome back,<br> <b>Jose</b> 
+    </div>
+  </div>
+  <div class="login-page">
+    <div class="form">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <form action="">
+        <div class="flex al-center">
+          <ion-input placeholder="Email" type="email"></ion-input> 
+        </div>
+        <div class="flex al-center">
+          <ion-input placeholder="Password" type="password"></ion-input>
+        </div>
+        <div class="forgot">Forgot Password</div>
+        <div class="form-bottom">
+          <ion-icon name="logo-apple"></ion-icon>
+          <ion-icon name="logo-google"></ion-icon>
+      <ion-button shape="round" class="app-btn mt-small" expand="block">
+        <span>Login</span><img src="assets/icon/chevron-right.svg" />
+      </ion-button>
+    </div>
+    </form>
+    </div>
+  </div>
 </ion-content>

@@ -8,6 +8,7 @@ const schema = new Schema({
     avatar: { type: String, required: true },
     plan: { type: String, required: true },
     language: { type: String, required: true },
+    role: { type: String, required: true },
     notification: Boolean,
     verified: Date,
     resetToken: {

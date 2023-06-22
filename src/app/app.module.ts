@@ -12,7 +12,10 @@ import { AlertComponent } from './components/alert/alert.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    AlertComponent
+  ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

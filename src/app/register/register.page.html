@@ -22,10 +22,22 @@
           <ion-input placeholder="Email" type="email" formControlName="email"></ion-input>
         </div>
         <div class="flex al-center">
-          <ion-input placeholder="Password" type="password" formControlName="password"></ion-input>
+          <div class="pinput">
+            <ion-input placeholder="Password" [type]="ptype" formControlName="password"></ion-input>
+            <div class="icon-wrapper">
+              <ion-icon name="eye-off-outline" *ngIf="ptype=='text'" (click)="switchType()"></ion-icon>
+              <ion-icon name="eye-outline" *ngIf="ptype=='password'" (click)="switchType()"></ion-icon>
+            </div>
+          </div>
         </div>
         <div class="flex al-center">
-          <ion-input placeholder="Confirm Password" type="password" formControlName="confirmPassword"></ion-input>
+          <div class="pinput">
+            <ion-input placeholder="Confirm Password" [type]="ptype" formControlName="confirmPassword"></ion-input>
+            <div class="icon-wrapper">
+              <ion-icon name="eye-off-outline" *ngIf="ptype=='text'" (click)="switchType()"></ion-icon>
+              <ion-icon name="eye-outline" *ngIf="ptype=='password'" (click)="switchType()"></ion-icon>
+            </div>
+          </div>
         </div>
         <div class="form-bottom">
           <ion-icon name="logo-apple"></ion-icon>
